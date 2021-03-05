@@ -1,0 +1,20 @@
+{% extends "crows/crows.html" %}
+
+
+{% block content %}
+  {% if current_user.username != "Crows1" %}
+    <div class="container p-5 my-5 bg-danger text-white text-center">
+        <p>I see you are a very naughty crow!</p>
+        <p>Challenges are sequential - you must be logged in as Crows2 to solve this level.</p>
+        <p>Get back to Crows1 and grab the flag.</p>
+    </div>
+  {% else %}
+      <div class="container p-5 my-5 bg-primary text-white text-center">
+        There is nothing on this page.
+        <img src="{{ url_for('static', filename='crows2/files/pixel.png') }}">
+      </div>
+   {% endif %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

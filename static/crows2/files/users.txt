@@ -1,0 +1,7 @@
+# username:password
+TheCrow:ac2b5f88fc33b7b9e0682be85784ec0d
+WhiteCrow:59920e994636168744039017dcf49e54
+CharlieTheCrow:f4de7fcd07c14a00ff96c5f900625529
+Crows3:3a12cc450cc5a484c00496898a532c92
+Crowvelinne:f398989d6bbc6801d56f33603baf13cf
+MalloryCrowstown:fbf6f01b4f6e7e8d0e6c1b5907f9be47

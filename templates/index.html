@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Codepen -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;display=swap'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+          crossorigin="anonymous"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='crows.css') }}">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"/>
+
+    <title>Crows CTF</title>
+</head>
+<body style="background-color: black">
+
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
+            <i class="h1 fas fa-crow" style="padding-right: 7px;"> </i>
+        </a>
+    </nav>
+
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="{{ url_for('auth.login', stage=0) }}" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <strong>Crows0</strong>
+            </a>
+
+            <a href="{{ url_for('auth.login', stage=1) }}" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <strong>Crows1</strong>
+            </a>
+
+            <a href="{{ url_for('auth.login', stage=2) }}" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <strong>Crows2</strong>
+            </a>
+
+            <a href="{{ url_for('auth.login', stage=3) }}" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <strong>Crows3</strong>
+            </a>
+
+            <a href="{{ url_for('auth.login', stage=4) }}" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <strong>Crows4</strong>
+            </a>
+
+            <a href="{{ url_for('auth.login', stage=5) }}" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <strong>Crows5</strong>
+            </a>
+
+            <a href="{{ url_for('auth.login', stage=6) }}" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <strong>Crows6</strong>
+            </a>
+
+            <a href="{{ url_for('auth.login', stage=7) }}" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <strong>Crows7</strong>
+            </a>
+
+            <div class="container seq">
+                <p> > Note that the challenges are sequential - start with Crows0 and work your way up.<br/>
+                    > The credentials for the first challenge are:<br/><br/>
+                    >>> Username: <b>Crows0</b><br/>
+                    >>> Password: <b>Crows0</b><br/><br/>
+
+                    Have <b>fun</b> and hopefully you will <b>learn</b> something new!
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% include 'bubbles.html' %}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Login to Crows{{ stage }}{% endblock %}</title>
+
+  {% block header %}
+    {% include 'headers.html' %}
+  {% endblock %}
+</head>
+
+<body style="background-color: #343a40;">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% if 'Invalid' in messages[0] %}
+      <ul id="flash" class="flashes alert alert-danger text-center h4">
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    {% endif %}
+  {% endwith %}
+
+
+<div class="wrapper">
+	<div class="container">
+		<h1>Welcome to Crows{{ stage }}<i class="fas fa-crow" style="margin-left: 7px;"> </i></h1>
+
+
+        <h3>Difficulty: <strong>
+            {% if stage | int < 3 %}
+                Baby
+            {% elif stage | int >= 3 and stage | int < 6 %}
+                Toddler
+            {% elif stage | int > 5 %}
+                Preschool
+            {% endif %}
+        </strong></h3>
+
+		<form class="form" action="/login" method="POST">
+			<input type="text" placeholder="Username" name="username" value="{{ request.form.username }}">
+			<input type="password" placeholder="Password" name="password" value="{{ request.form.password }}">
+			<button type="submit" id="login-button" value="Login">Login</button>
+		</form>
+	</div>
+
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+</body>
+</html>
