@@ -27,12 +27,12 @@
 </head>
 <body style="background-color: black">
 
+    {% if not request.MOBILE %}
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
             <i class="h1 fas fa-crow" style="padding-right: 7px;"> </i>
         </a>
     </nav>
-
     <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container d-flex justify-content-between">
             <a href="{{ url_for('auth.login', stage=0) }}" class="navbar-brand d-flex align-items-center">
@@ -87,7 +87,36 @@
         </div>
     </div>
 
-{% include 'bubbles.html' %}
+        {% include 'bubbles.html' %}
+        {% else %}
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
+                <i class="h1 fas fa-crow" style="padding-right: 7px;"> </i>
+            </a>
+        </nav>
+        <div class="container-fluid p-5 my-5 text-white text-center" style="background-color:#343A40;">
+        <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
+            <i class="h1 fas fa-crow" style="padding-right: 7px;"> </i>
+        </a>
+          <p>
+              The CTF challenges are not supposed to be solved on mobile.
+          </p>
+          <p>
+              Please access this website on a desktop environment.
+          </p>
+          <div class="btn-group btn-group-lg d-flex justify-content-center" role="group">
+              <button onclick="window.open('', '_self', ''); window.close();" type="button" class="btn btn-outline-danger mr-3">
+                <i class="fas fa-meh-rolling-eyes"></i>
+                Ugghhh
+              </button>
+              <button onclick="window.open('', '_self', ''); window.close();" type="button" class="btn btn-outline-success">
+                <i class="fas fa-sad-cry"></i>
+                Sad Panda
+              </button>
+          </div>
+        </div>
+        {% endif %}
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
