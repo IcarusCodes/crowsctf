@@ -24,12 +24,6 @@ def index():
 #     return send_from_directory("users.txt", "/static/crows2/files")
 
 
-@main.route('/profile')
-@login_required
-def profile():
-    return render_template('profile.html', name=current_user.name)
-
-
 @main.route('/crows<i>')
 @login_required
 def crows(i=""):
