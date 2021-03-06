@@ -37,18 +37,16 @@
         <strong class="h1">{{ level }}</strong>
       </a>
     </div>
-
   </div>
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <ul class="flashes alert alert-success text-center h3" id="flash">
-          <i class="fas fa-crow" style="padding-right: 7px;"> </i><p>{{ messages[0] }}</p>
-      </ul>
-    {% endif %}
-  {% endwith %}
-
 
     {% block content %}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flashes alert alert-success text-center h3" id="flash">
+              <i class="fas fa-crow" style="padding-right: 7px;"> </i><p>{{ messages[0] }}</p>
+          </ul>
+        {% endif %}
+      {% endwith %}
     {% endblock %}
 
   <!-- This is not part of the challenge, ignore. -->
