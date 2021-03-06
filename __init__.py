@@ -2,12 +2,14 @@ import time
 from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from flask_mobility import Mobility
 
 db = SQLAlchemy()
 
 
 def create_app():
     app = Flask(__name__)
+    Mobility(app)
 
     app.config['SECRET_KEY'] = "what3v3r"
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
