@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_user, logout_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_mobility import mobile_template
 from .models import User
 from . import db
 
@@ -9,6 +10,7 @@ auth = Blueprint('auth', __name__)
 accepted_users = ['Crows0', 'Crows1', 'Crows2', 'Crows3', 'Crows4', 'Crows5', 'Crows6']
 
 
+@mobile_template('index.html')
 @auth.route('/login')
 def login():
     if request.method == 'GET':
@@ -23,7 +25,6 @@ def login():
 
 @auth.route('/login', methods=['POST', 'GET'])
 def login_post():
-
     username = request.form.get('username')
     password = request.form.get('password')
 
