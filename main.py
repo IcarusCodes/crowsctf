@@ -1,9 +1,9 @@
-import random, re
-
-from flask import Blueprint, render_template, request, flash, redirect, url_for, send_from_directory
-from flask_login import login_required, current_user
-from . import db
+import random
+import re
 from datetime import datetime
+
+from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask_login import login_required
 
 main = Blueprint('main', __name__)
 
@@ -23,15 +23,27 @@ def dashboard():
     return render_template('dashboard.html')
 
 
-# @main.route('/static/crows2/files')
-# def files():
-#     # return "<h1> UGH </h1>"
-#     return send_from_directory("users.txt", "/static/crows2/files")
+@main.route('/crows3/robots.txt')
+def robots():
+    return render_template('robots.html')
+
+
+@main.route('/crows3/cr0w-s3cr3t')
+def secret():
+    return render_template('secret.html')
 
 
 @main.route('/crows<i>')
 @login_required
 def crows(i=""):
+    # Handle crows3
+    if 'robots.txt' in request.url and 'crows3' in request.url:
+        return redirect(url_for('main.robots'))
+
+    # Handle Crows4
+    if 'crows4' and request.headers.get('Referer') == "http://crowsctf.cf/crows5":
+            return render_template(f'crows/crows4success.html', level=f'Crows4')
+
     msg = request.args.get('msg')
     if msg is None:
         msg = "0"

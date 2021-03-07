@@ -1,0 +1,27 @@
+{% extends "crows/crows.html" %}
+{% block title %}Crows4{% endblock %}
+{% block content %}
+  {% if current_user.username != "Crows4" %}
+    <div class="container p-5 my-5 bg-danger text-white text-center">
+        <p>I see you are a very naughty crow!</p>
+        <p>Challenges are sequential - you must be logged in as Crows4 to solve this level.</p>
+        <p>Get back to Crows3 and grab the flag.</p>
+    </div>
+  {% else %}
+      <div class="container p-5 my-5 bg-primary text-white text-center">
+       <p>Unauthorized to view this page.</p>
+       <p>You are coming from
+           <code>
+            {% if request.headers.get('Referer') == None %}
+             ""
+            {% else %}
+             {{ request.headers.get('Referer') }}
+           {% endif %}
+            </code>
+           while authorized users should come from <code>http://crowsctf.cf/crows5</code>
+       </p>
+      </div>
+   {% endif %}
+{% endblock %}
+
+

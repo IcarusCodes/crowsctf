@@ -8,102 +8,109 @@
 </head>
 <body style="background-color: black">
 
-    {% if not request.MOBILE %}
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
-          <div class="c-glitch" >
-              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-          </div>
+{% if not request.MOBILE %}
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
+        <div class="c-glitch">
+            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+        </div>
+    </a>
+</nav>
+
+<div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+        <a href="{{ url_for('auth.login', stage=0) }}" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
+            <strong>Crows0</strong>
         </a>
-    </nav>
 
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container d-flex justify-content-between">
-            <a href="{{ url_for('auth.login', stage=0) }}" class="navbar-brand d-flex align-items-center">
-                <i class="fas fa-crow grow" style="padding-right: 7px;"> </i>
-                <strong>Crows0</strong>
-	    </a>
-
-            <a href="{{ url_for('auth.login', stage=1) }}" class="navbar-brand d-flex align-items-center">
-                <div class="grows">
-                    <i class="fas fa-crow" style="padding-right: 7px;"></i>
-                    <strong>Crows1</strong>
-                </div>
-            </a>
-
-            <a href="{{ url_for('auth.login', stage=2) }}" class="navbar-brand d-flex align-items-center">
-                <i class="fas fa-crow grow" style="padding-right: 7px;"> </i>
-                <strong>Crows2</strong>
-            </a>
-
-            <a href="{{ url_for('auth.login', stage=3) }}" class="navbar-brand d-flex align-items-center">
-                <i class="fas fa-crow grow" style="padding-right: 7px;"> </i>
-                <strong>Crows3</strong>
-            </a>
-
-            <a href="{{ url_for('auth.login', stage=4) }}" class="navbar-brand d-flex align-items-center">
-                <i class="fas fa-crow grow" style="padding-right: 7px;"> </i>
-                <strong>Crows4</strong>
-            </a>
-
-            <a href="{{ url_for('auth.login', stage=5) }}" class="navbar-brand d-flex align-items-center">
-                <i class="fas fa-crow grow" style="padding-right: 7px;"> </i>
-                <strong>Crows5</strong>
-            </a>
-
-            <a href="{{ url_for('auth.login', stage=6) }}" class="navbar-brand d-flex align-items-center">
-                <i class="fas fa-crow grow" style="padding-right: 7px;"> </i>
-                <strong>Crows6</strong>
-            </a>
-
-            <a href="{{ url_for('auth.login', stage=7) }}" class="navbar-brand d-flex align-items-center">
-                <i class="fas fa-crow grow" style="padding-right: 7px;"> </i>
-                <strong>Crows7</strong>
-            </a>
-
-            <div class="container seq">
-                <p> > Note that the challenges are sequential - start with Crows0 and work your way up.<br/>
-                    > The credentials for the first challenge are:<br/><br/>
-                    >>> Username: <b>Crows0</b><br/>
-                    >>> Password: <b>Crows0</b><br/><br/>
-
-                    Have <b>fun</b> and hopefully you will <b>learn</b> something new!
-                </p>
+        <a href="{{ url_for('auth.login', stage=1) }}" class="navbar-brand d-flex align-items-center">
+            <div class="grows">
+                <i class="fas fa-crow fa-lg" style="padding-right: 7px;"></i>
+                <strong>Crows1</strong>
             </div>
+        </a>
+
+        <a href="{{ url_for('auth.login', stage=2) }}" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
+            <strong>Crows2</strong>
+        </a>
+
+        <a href="{{ url_for('auth.login', stage=3) }}" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
+            <strong>Crows3</strong>
+        </a>
+
+        <a href="{{ url_for('auth.login', stage=4) }}" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
+            <strong>Crows4</strong>
+        </a>
+
+        <a href="{{ url_for('auth.login', stage=5) }}" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
+            <strong>Crows5</strong>
+        </a>
+
+        <a href="{{ url_for('auth.login', stage=6) }}" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
+            <strong>Crows6</strong>
+        </a>
+
+        <a href="{{ url_for('auth.login', stage=7) }}" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
+            <strong>Crows7</strong>
+        </a>
+
+        <div class="container seq">
+            <p> > Note that the challenges are sequential - start with Crows0 and work your way up.<br/>
+                > The credentials for the first challenge are:<br/><br/>
+                >>> Username: <strong>Crows0</strong><br/>
+                >>> Password:&nbsp;&nbsp;<strong>Crows0</strong><br/><br/>
+
+                <strong>TIP:</strong> If inside a level you see a path like <code>/not-a-crow</code> that path is
+                relative to the current level. If for example you see such a path in <strong>crows0</strong>, it
+                translates to a path like <code>crows0/not-a-crow</code> and <strong>not</strong>
+                <code>crowsctf.cf/not-a-crow</code>.<br/><br/><br/>
+
+                Have <strong>fun</strong> and hopefully you will <strong>learn</strong> something new!
+            </p>
         </div>
     </div>
+</div>
 
-        {% include 'bubbles.html' %}
-        {% else %}
-        <div class="container-fluid p-5 my-5 text-white text-center" style="background-color:#343A40;">
-            <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
-                <i class="h1 fas fa-crow" style="padding-right: 7px;"> </i>
-            </a>
-              <p>
-                  The CTF challenges are not supposed to be solved on mobile.
-              </p>
-              <p>
-                  Please access this website on a desktop environment.
-              </p>
+{% include 'bubbles.html' %}
+{% else %}
+<div class="container-fluid p-5 my-5 text-white text-center" style="background-color:#343A40;">
+    <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
+        <i class="h1 fas fa-crow" style="padding-right: 7px;"> </i>
+    </a>
+    <p>
+        The CTF challenges are not supposed to be solved on mobile.
+    </p>
+    <p>
+        Please access this website on a desktop environment.
+    </p>
 
 
-              <div class="btn-group btn-group-lg d-flex justify-content-center" role="group">
-                  <button onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" type="button" class="btn btn-outline-danger mr-1">
-                    <i class="fas fa-meh-rolling-eyes"></i>
-                    <p>Ugghhh</p>
-                  </button>
+    <div class="btn-group btn-group-lg d-flex justify-content-center" role="group">
+        <button onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" type="button"
+                class="btn btn-outline-danger mr-1">
+            <i class="fas fa-meh-rolling-eyes"></i>
+            <p>Ugghhh</p>
+        </button>
 
-                  <button onclick="location.href='https://www.youtube.com/watch?v=Kdnki7XBzPE'" type="button" class="btn btn-outline-success mr-1">
-                    <i class="fas fa-sad-cry"></i>
-                    <p>Sad Panda</p>
-                  </button>
-              </div>
-        </div>
-        {% endif %}
+        <button onclick="location.href='https://www.youtube.com/watch?v=Kdnki7XBzPE'" type="button"
+                class="btn btn-outline-success mr-1">
+            <i class="fas fa-sad-cry"></i>
+            <p>Sad Panda</p>
+        </button>
+    </div>
+</div>
+{% endif %}
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

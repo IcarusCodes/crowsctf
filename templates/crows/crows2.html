@@ -1,6 +1,5 @@
 {% extends "crows/crows.html" %}
-
-
+{% block title %}Crows2{% endblock %}
 {% block content %}
   {% if current_user.username != "Crows2" %}
     <div class="container p-5 my-5 bg-danger text-white text-center">
@@ -14,7 +13,4 @@
         <img src="{{ url_for('static', filename='crows2/files/pixel.png') }}">
       </div>
    {% endif %}
-{% endblock %}
-
-{% block footer %}
 {% endblock %}
