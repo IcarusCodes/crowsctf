@@ -77,16 +77,6 @@ body .footer .content > div .image {
   padding-top: 40px;
 }
 
-/*
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.1); }
-*/
-/* The Image container */
-.grows {
-  height: 300px; /* Modify this according to your need */
-  overflow: hidden; /* Removing this will break the effects */
-}
-
 @-webkit-keyframes bubble-size {
   0%, 75% {
     width: var(--size, 4rem);
