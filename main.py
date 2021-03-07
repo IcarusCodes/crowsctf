@@ -59,7 +59,7 @@ def crows(i=""):
 
             flash(random_message[random.randint(0, 8)])
 
-    return render_template(f'crows/crows{level}.html', level=f'Crows{i}')
+    return render_template(f'crows/crows{level}.html', level=f'Crows{level}')
 
 
 if __name__ == "__main__":
