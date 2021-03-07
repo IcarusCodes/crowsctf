@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    {% if current_user.username == "crowadmin" %}
     <section class="hero is-primary is-fullheight">
 
         <div class="hero-head">
@@ -43,6 +44,12 @@
             </div>
         </div>
     </section>
+    {% else %}
+    <section class="hero is-primary is-fullheight">
+        <h1>403 Unauthorized</h1>
+        <p>You should not be here. This is not part of the challenge, get back to Crows?</p>
+    </section>
+    {% endif %}
 </body>
 
 </html>
