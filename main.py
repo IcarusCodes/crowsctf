@@ -42,7 +42,7 @@ def crows(i=""):
 
     # Handle Crows4
     if 'crows4' and request.headers.get('Referer') == "http://crowsctf.cf/crows5":
-            return render_template(f'crows/crows4success.html', level=f'Crows4')
+        return render_template(f'crows/crows4success.html', level=f'Crows4')
 
     msg = request.args.get('msg')
     if msg is None:
