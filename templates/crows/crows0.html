@@ -1,6 +1,4 @@
 {% extends "crows/crows.html" %}
-
-
 {% block content %}
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -9,10 +7,9 @@
             </ul>
         {% endif %}
     {% endwith %}
-
     <div class="container p-5 my-5 bg-primary text-white text-center">
       The flag for the next challenge is on this page.
     </div>
-    <!-- Crows1 password is 44fab3b624ef4341d8e9c66537baa9a0 -->
+    <!-- 44fab3b624ef4341d8e9c66537baa9a0 -->
 {% endblock %}
 
