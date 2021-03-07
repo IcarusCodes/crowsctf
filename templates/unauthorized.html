@@ -1,0 +1,35 @@
+{% block title %}401 Unauthorized{% endblock %}
+ <nav class="w-25 p-3 navbar navbar-dark bg-dark fixed-top">
+        <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
+          <div class="c-glitch" >
+              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+              <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
+          </div>
+        </a>
+    </nav>
+	<div class="grid">
+	 	<div class="grid__item"></div>
+		<div class="grid__item"></div>
+	</div>
+	<div id="unauth">
+		<div class="unauth">
+			<div class="unauth-401">
+				<h1>Crows!</h1>
+			</div>
+			<h2>401 - Unauthorized</h2>
+			<p>The request has not been applied because it lacks valid authentication credentials for the target resource.</p>
+			<p>NOTE: This is not part of the challenge!</p>
+		</div>
+	</div>
+
+	<div class="grid">
+		<div class="grid__item"></div>
+		<div class="grid__item"></div>
+		<div class="grid__item"></div>
+		<div class="grid__item"></div>
+		<div class="grid__item"></div>
+	</div>
+

@@ -1,0 +1,112 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color:#343A40;
+}
+
+p h1  {
+  color: white;
+}
+
+.navbar {
+    background-color: #343A40;
+}
+
+.grid {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  height: auto;
+}
+
+.grid__item {
+  height: 50px;
+  width: 50px;
+  background: grey;
+  opacity: 0;
+  transition: opacity 2s ease 0.4s, transform 0.8s ease;
+  transform: scale(1);
+}
+
+.grid__item:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  transform: scale(1.04);
+}
+
+#unauth {
+  position: relative;
+  height: 20vh;
+}
+
+#unauth .unauth {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.unauth {
+  max-width: 410px;
+  width: 100vh;
+  text-align: center;
+}
+
+.unauth .unauth-401 {
+  height: 280px;
+  position: relative;
+  z-index: -1;
+}
+
+.unauth .unauth-401 h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 230px;
+  margin: 0px;
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: url("./feathers.jpg") no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.unauth h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.unauth p {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 767px) {
+    .unauth .unauth-401 {
+      height: 142px;
+    }
+    .unauth .notfound-401 h1 {
+      font-size: 112px;
+    }
+}

@@ -18,6 +18,11 @@ def index():
     return render_template('index.html')
 
 
+@main.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+
 # @main.route('/static/crows2/files')
 # def files():
 #     # return "<h1> UGH </h1>"
