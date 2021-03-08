@@ -9,8 +9,9 @@
 <body>
 
 {% if not request.MOBILE %}
-<nav class="navbar navbar-dark bg-dark fixed-top" style="margin-bottom: 1px">
-    <a href="{{ url_for('main.index') }}" class="navbar-brand align-items-center">
+<nav class="navbar navbar-dark bg-dark flex-wrap fixed-top">
+
+    <a href="{{ url_for('main.index') }}" class="navbar-brand align-items-start">
         <div class="c-glitch container-lg">
             <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
             <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
@@ -19,66 +20,69 @@
             <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
         </div>
     </a>
+
+    <a href="{{ url_for('auth.login', stage=0) }}" class="navbar-brand">
+        <i class="fas fa-crow fa-lg"> </i>
+        <strong>Crows0</strong>
+    </a>
+
+    <a href="{{ url_for('auth.login', stage=1) }}" class="navbar-brand">
+        <div class="grows">
+            <i class="fas fa-crow fa-lg"></i>
+            <strong>Crows1</strong>
+        </div>
+    </a>
+
+    <a href="{{ url_for('auth.login', stage=2) }}" class="navbar-brand">
+        <i class="fas fa-crow fa-lg"> </i>
+        <strong>Crows2</strong>
+    </a>
+
+    <a href="{{ url_for('auth.login', stage=3) }}" class="navbar-brand">
+        <i class="fas fa-crow fa-lg"> </i>
+        <strong>Crows3</strong>
+    </a>
+
+    <a href="{{ url_for('auth.login', stage=4) }}" class="navbar-brand">
+        <i class="fas fa-crow fa-lg"> </i>
+        <strong>Crows4</strong>
+    </a>
+
+    <a href="{{ url_for('auth.login', stage=5) }}" class="navbar-brand">
+        <i class="fas fa-crow fa-lg"> </i>
+        <strong>Crows5</strong>
+    </a>
+
+    <a href="{{ url_for('auth.login', stage=6) }}" class="navbar-brand">
+        <i class="fas fa-crow fa-lg"> </i>
+        <strong>Crows6</strong>
+    </a>
+
+    <a href="{{ url_for('auth.login', stage=7) }}" class="navbar-brand">
+        <i class="fas fa-crow fa-lg"> </i>
+        <strong>Crows7</strong>
+    </a>
 </nav>
 
-<div id="main_container" class="navbar navbar-dark bg-dark shadow-sm align-items-xl-center align-items-md-start"ls>
-    <div class="container d-flex flex-wrap">
-        <a href="{{ url_for('auth.login', stage=0) }}" class="navbar-brand d-flex">
-            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
-            <strong>Crows0</strong>
-        </a>
+<div id="main_container" class="d-flex align-items-center">
+    <div class="container seq">
+        <p class="text-justify"> > Note that the challenges are sequential - start with Crows0 and work your way up.<br/>
+            > The credentials for the first challenge are:<br/><br/>
+        </p>
+        <p class="text-justify">
+            >>> Username: <strong>Crows0</strong><br/>
+            >>> Password:&nbsp;&nbsp;<strong>Crows0</strong><br/><br/>
+        </p>
 
-        <a href="{{ url_for('auth.login', stage=1) }}" class="navbar-brand d-flex align-items-center">
-            <div class="grows">
-                <i class="fas fa-crow fa-lg" style="padding-right: 7px;"></i>
-                <strong>Crows1</strong>
-            </div>
-        </a>
+        <p class="text-justify">
+            <strong>TIP:</strong> If inside a level you see a path like <code>/not-a-crow</code> that path is
+            relative to the current level. If for example you see such a path in <strong>crows0</strong>, it
+            translates to a path like <code>crows0/not-a-crow</code> and <strong>not</strong>
+            <code>crowsctf.cf/not-a-crow</code>.<br/><br/><br/>
 
-        <a href="{{ url_for('auth.login', stage=2) }}" class="navbar-brand d-flex align-items-center">
-            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
-            <strong>Crows2</strong>
-        </a>
+            Have <strong>fun</strong> and hopefully you will <strong>learn</strong> something new!
+        </p>
 
-        <a href="{{ url_for('auth.login', stage=3) }}" class="navbar-brand d-flex align-items-center">
-            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
-            <strong>Crows3</strong>
-        </a>
-
-        <a href="{{ url_for('auth.login', stage=4) }}" class="navbar-brand d-flex align-items-center">
-            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
-            <strong>Crows4</strong>
-        </a>
-
-        <a href="{{ url_for('auth.login', stage=5) }}" class="navbar-brand d-flex align-items-center">
-            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
-            <strong>Crows5</strong>
-        </a>
-
-        <a href="{{ url_for('auth.login', stage=6) }}" class="navbar-brand d-flex align-items-center">
-            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
-            <strong>Crows6</strong>
-        </a>
-
-        <a href="{{ url_for('auth.login', stage=7) }}" class="navbar-brand d-flex align-items-center">
-            <i class="fas fa-crow fa-lg" style="padding-right: 7px;"> </i>
-            <strong>Crows7</strong>
-        </a>
-
-        <div class="container seq">
-            <p> > Note that the challenges are sequential - start with Crows0 and work your way up.<br/>
-                > The credentials for the first challenge are:<br/><br/>
-                >>> Username: <strong>Crows0</strong><br/>
-                >>> Password:&nbsp;&nbsp;<strong>Crows0</strong><br/><br/>
-
-                <strong>TIP:</strong> If inside a level you see a path like <code>/not-a-crow</code> that path is
-                relative to the current level. If for example you see such a path in <strong>crows0</strong>, it
-                translates to a path like <code>crows0/not-a-crow</code> and <strong>not</strong>
-                <code>crowsctf.cf/not-a-crow</code>.<br/><br/><br/>
-
-                Have <strong>fun</strong> and hopefully you will <strong>learn</strong> something new!
-            </p>
-        </div>
     </div>
 </div>
 
