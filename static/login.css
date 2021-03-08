@@ -61,6 +61,7 @@ body :-ms-input-placeholder {
   height: 400px;
   margin-top: -200px;
   overflow: hidden;
+  z-index: 2;
 }
 .wrapper.form-success .container h1 {
   transform: translateY(85px);
