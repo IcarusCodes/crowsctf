@@ -72,6 +72,11 @@ body .footer .content > div .image {
   background-position: center;
 }
 
+#main_container {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
 .seq {
   color: white;
   padding-top: 40px;
