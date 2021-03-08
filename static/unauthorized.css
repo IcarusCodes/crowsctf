@@ -43,6 +43,7 @@ p h1  {
 #unauth {
   position: relative;
   height: 20vh;
+  margin-top: 5%;
 }
 
 #unauth .unauth {

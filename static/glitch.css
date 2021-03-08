@@ -1,3 +1,7 @@
+#glitch-crow {
+    width: 10vw !important;
+}
+
 .c-glitch,
 .c-glitch__img {
   background-repeat: no-repeat;
@@ -7,12 +11,16 @@
 .c-glitch {
   height: 10vh;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   width: 5vw;
+  min-width: 5vw;
 }
 
+
 .c-glitch__img {
+  background-position: 50% 50%;
+  background-size: cover;
   background-blend-mode: none;
   background-color: transparent;
   height: calc(100% + 5px * 2);

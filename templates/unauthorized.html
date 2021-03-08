@@ -1,5 +1,5 @@
 {% block title %}401 Unauthorized{% endblock %}
- <nav class="w-25 p-3 navbar navbar-dark bg-dark fixed-top">
+ <nav id="glitch-crow" class="p-3 navbar navbar-dark bg-dark fixed-top">
         <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
           <div class="c-glitch" >
               <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
@@ -12,7 +12,6 @@
     </nav>
 	<div class="grid">
 	 	<div class="grid__item"></div>
-		<div class="grid__item"></div>
 	</div>
 	<div id="unauth">
 		<div class="unauth">
