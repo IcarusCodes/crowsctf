@@ -2,16 +2,25 @@
 {% block title %}Crows3{% endblock %}
 {% block content %}
   {% if current_user.username != "Crows3" %}
-    <div class="container p-5 my-5 bg-danger text-white text-center">
+    <div class="container secondary_container_danger bg-danger text-white text-center">
         <p>I see you are a very naughty crow!</p>
         <p>Challenges are sequential - you must be logged in as Crows3 to solve this level.</p>
         <p>Get back to Crows2 and grab the flag.</p>
     </div>
   {% else %}
-      <div class="container p-5 my-5 bg-primary text-white text-center">
-        I've hidden the flag so well that even <strong>Google</strong> won't be able to index it.
+      <div class="container text-white secondary_container">
+          I've hidden the flag so well that even <strong>Google</strong> won't be able to <em>index</em> it.
       </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="flash_container">
+            <ul class="flashes alert alert-success text-center h3" id="flash">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <p>{{ messages[0] }}</p>
+            </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
+
    {% endif %}
 {% endblock %}
-
-

@@ -96,6 +96,17 @@ body .footer .content > div .image {
     height: fit-content;
     margin-left: auto;
     margin-right: auto;
+    border-right: 5px solid #f0f3f7;
+    border-bottom: 5px solid #f0f3f7;
+    padding: 15px;
+    transition: 0.5s;
+}
+
+.main_container_crow:hover {
+    border-left: 5px solid #f0f3f7;
+    border-top: 5px solid #f0f3f7;
+    border-right: 0;
+    border-bottom: 0;
 }
 
 
@@ -128,11 +139,6 @@ body .footer .content > div .image {
 .seq {
   color: white;
   padding-top: 40px;
-}
-
-.slct::selection {
-  color: white;
-  background: red;
 }
 
 @-webkit-keyframes bubble-size {

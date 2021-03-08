@@ -30,7 +30,7 @@ def robots():
 
 @main.route('/crows3/cr0w-s3cr3t')
 def secret():
-    return render_template('secret.html')
+    return render_template('crows/crows-secret.html')
 
 
 @main.route('/crows<i>')
