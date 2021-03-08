@@ -3,10 +3,16 @@ from flask_login import login_user, logout_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
 from . import db
+from datetime import datetime
 
 auth = Blueprint('auth', __name__)
 
 accepted_users = ['Crows0', 'Crows1', 'Crows2', 'Crows3', 'Crows4', 'Crows5', 'Crows6']
+
+
+@auth.context_processor
+def inject_now():
+    return {'now': datetime.utcnow()}
 
 
 @auth.route('/login')

@@ -2,24 +2,28 @@
 {% block title %}Crows1{% endblock %}
 {% block content %}
   {% if current_user.username != "Crows1" %}
-    <div class="container p-5 my-5 bg-danger text-white text-center">
+    <div class="container secondary_container_danger bg-danger text-white text-center">
         <p>I see you are a very naughty crow!</p>
         <p>Challenges are sequential - you must be logged in as Crows1 to solve this level.</p>
         <p>Get back to Crows0 and grab the flag.</p>
     </div>
   {% else %}
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-          <ul class="flashes alert alert-success text-center h3" id="flash">
-              <i class="fas fa-crow" style="padding-right: 7px;"> </i><p>{{ messages[0] }}</p>
-          </ul>
-        {% endif %}
-      {% endwith %}
 
-      <div class="container p-5 my-5 bg-primary text-white text-center">
-        The flag for the next challenge is on this page, however right clicking was blocked!
-      </div>
-      <!-- N2NmNDAzOTMwNmZhMzk1ZjI1MjdlM2RlMjUzNGFiMjA= -->
+    <div class="container text-white secondary_container">
+        <p>The flag for the next challenge is on this page, however right clicking was blocked!</p>
+        <!-- N2NmNDAzOTMwNmZhMzk1ZjI1MjdlM2RlMjUzNGFiMjA -->
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash_container">
+            <ul class="flashes alert alert-success text-center h3" id="flash">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <p>{{ messages[0] }}</p>
+            </ul>
+        </div>
+    {% endif %}
+    {% endwith %}
+
    {% endif %}
 {% endblock %}
 

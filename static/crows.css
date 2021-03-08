@@ -7,7 +7,7 @@ body {
   grid-template-areas: "main" "footer";
   overflow-x: hidden;
   background: #343A40;
-  min-height: 50vh;
+  min-height: 100vh;
   font-family: "Open Sans", sans-serif;
   padding-top: 100px;
 }
@@ -78,11 +78,50 @@ body .footer .content > div .image {
   margin: 0.25rem 0;
   background-size: cover;
   background-position: center;
+  margin-right: 150%;
 }
 
-#main_container {
+.main_container {
     margin-top: 5%;
     margin-bottom: 10%;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+
+.main_container_crow {
+    margin-top: 5%;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.main_container h1 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.secondary_container {
+    width: 70%;
+    text-align: center;
+    height: fit-content;
+    font-size: 2rem;
+}
+
+.secondary_container_danger {
+    width: 70%;
+    text-align: center;
+    height: fit-content;
+    font-size: 1.5rem;
+}
+
+.flash_container {
+    margin-bottom: auto;
+    position: relative;
 }
 
 .seq {

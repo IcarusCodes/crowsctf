@@ -1,16 +1,20 @@
 {% extends "crows/crows.html" %}
 {% block title %}Crows0{% endblock %}
 {% block content %}
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul class="flashes alert alert-success text-center h3" id="flash">
-                <i class="fas fa-crow" style="padding-right: 7px;"> </i><p>{{ messages[0] }}</p>
-            </ul>
-        {% endif %}
-    {% endwith %}
-    <div class="container p-5 my-5 bg-primary text-white text-center">
-      The flag for the next challenge is on this page.
+
+    <div class="container text-white secondary_container">
+        <p>The flag for the next challenge is on this page.</p>
+        <!-- 44fab3b624ef4341d8e9c66537baa9a0 -->
     </div>
-    <!-- 44fab3b624ef4341d8e9c66537baa9a0 -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash_container">
+            <ul class="flashes alert alert-success text-center h3" id="flash">
+                <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                <p>{{ messages[0] }}</p>
+            </ul>
+        </div>
+    {% endif %}
+    {% endwith %}
 {% endblock %}
 

@@ -4,39 +4,20 @@
     <meta charset="UTF-8">
     <title>{% block title %}Login to Crows{{ stage }}{% endblock %}</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"/>
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='glitch.css') }}">
+    {% include 'headers.html' %}
     <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='crows.css')}}">
 </head>
 
 <body style="background-color: #343a40;">
 
-<nav class="w-25 p-3 navbar navbar-dark bg-dark fixed-top">
-    <a href="{{ url_for('main.index') }}" class="navbar-brand d-flex align-items-center">
-        <div class="c-glitch">
-            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-            <img class="c-glitch__img" src="{{ url_for('static', filename='crow.png') }}" alt="">
-        </div>
-    </a>
-</nav>
-
+{% include 'navbar.html' %}
 
 <div class="wrapper">
     <div class="container">
-        <h1>Welcome to Crows{{ stage }}<i class="fas fa-crow" style="margin-left: 7px;"> </i></h1>
-
-
-        <h3>Difficulty: <strong>
+        <h1>Welcome to <strong class="text-dark">Crows{{ stage }}<i class="fas fa-crow" style="margin-left: 7px;"> </i></strong>
+        </h1>
+        <h3>Difficulty: <strong class="text-dark">
             {% if stage | int < 3 %}
             Baby
             {% elif stage | int >= 3 and stage | int < 6 %}
@@ -45,6 +26,7 @@
             Preschool
             {% endif %}
         </strong></h3>
+
 
         <form class="form" action="/login" method="POST">
             <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}">
@@ -79,6 +61,8 @@
 {% endif %}
 {% endif %}
 {% endwith %}
+
+{% include 'bubbles.html' %}
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
