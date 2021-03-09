@@ -29,6 +29,8 @@ def login():
 
 @auth.route('/login', methods=['POST', 'GET'])
 def login_post():
+    stage = request.form.get('stage')
+
     username = request.form.get('username')
     password = request.form.get('password')
 
@@ -41,10 +43,6 @@ def login_post():
 
     if not user or not check_password_hash(user.password, password):
         flash(f'Invalid username or password.')
-        return redirect(url_for(f'auth.login'))
-
-    if user.username.lower() not in [f'crows{x}' for x in range(0, 8)]:
-        flash(f'Only Crows users allowed.')
         return redirect(url_for(f'auth.login', stage=stage))
 
     login_user(user)
