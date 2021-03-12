@@ -16,7 +16,7 @@ body {
 }
 
 .l {
-  border: 3px solid red;
+  max-height: 200px;
 }
 
 p h1  {
