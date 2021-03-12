@@ -3,10 +3,20 @@
           box-sizing: border-box;
 }
 
-body {
-  padding: 0;
-  margin: 0;
+html {
   background-color:#343A40;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color:#343A40;
+}
+
+.l {
+  border: 3px solid red;
 }
 
 p h1  {
@@ -14,7 +24,7 @@ p h1  {
 }
 
 .navbar {
-    background-color: #343A40;
+    justify-content: space-around;
 }
 
 .grid {

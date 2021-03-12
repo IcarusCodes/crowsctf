@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 main = Blueprint('main', __name__)
 
@@ -20,7 +20,10 @@ def index():
 
 @main.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    if current_user.username == "crowadmin":
+        return render_template('dashboard.html')
+    else:
+        return render_template('unauthorized.html')
 
 
 @main.route('/crows3/robots.txt')
@@ -31,6 +34,15 @@ def robots():
 @main.route('/crows3/cr0w-s3cr3t')
 def secret():
     return render_template('crows/crows-secret.html')
+
+
+@main.route('/crows5/submit', methods=['POST'])
+def submit():
+    if request.method == 'POST':
+        if request.form.get('secret') == "asdad":
+            return render_template('crows/crows5success.html')
+        else:
+            return redirect(url_for(f'main.crows', i=5, msg=10))
 
 
 @main.route('/crows<i>')
@@ -50,7 +62,7 @@ def crows(i=""):
 
     msg = re.sub("[^\d]+", '', msg)
 
-    if int(i) in range(0, 8):
+    if int(i) in range(0, 9):
         level = i
     else:
         level = 0
@@ -59,8 +71,10 @@ def crows(i=""):
         if msg == "":
             msg = 0
         if int(msg) == 0:
-            flash(f"CAAWW!! You successfully logged in at Crows{i}, good luck.", )
+            flash(f"CAAWW!! You successfully logged in at Crows{i}, good luck.")
             return redirect(url_for(f'main.crows', i=i, msg=1))
+        elif int(msg) == 10:
+            flash(f'Wrong secret :( Keep trying!')
         else:
             random_message = [
                 "Did you really think crows would hide hints like this?",

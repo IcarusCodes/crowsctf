@@ -1,24 +1,47 @@
-{% block title %}401 Unauthorized{% endblock %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% include 'headers.html' %}
+    <link rel="stylesheet" href="{{url_for('static', filename='crows.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='unauthorized.css')}}">
+    <title>Unauthorized 401</title>
+</head>
+<body>
+
 {% include 'navbar.html' %}
-	<div class="grid">
-	 	<div class="grid__item"></div>
+	<div class="l">
+		<div class="grid">
+			<div class="grid__item"></div>
+		</div>
 	</div>
+
 	<div id="unauth">
+		<div class="grid">
+			<div class="grid__item"></div>
+		</div>
 		<div class="unauth">
 			<div class="unauth-401">
 				<h1>Crows!</h1>
 			</div>
+			{% block content %}
 			<h2>401 - Unauthorized</h2>
 			<p>The request has not been applied because it lacks valid authentication credentials for the target resource.</p>
 			<p>NOTE: This is not part of the challenge!</p>
+			{% endblock %}
 		</div>
 	</div>
 
-	<div class="grid">
-		<div class="grid__item"></div>
-		<div class="grid__item"></div>
-		<div class="grid__item"></div>
-		<div class="grid__item"></div>
-		<div class="grid__item"></div>
+	<div class="l">
+		<div class="grid">
+			<div class="grid__item"></div>
+			<div class="grid__item"></div>
+			<div class="grid__item"></div>
+		</div>
 	</div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+<script src="{{url_for('static', filename='js/trails.js')}}"></script>
+</body>
+</html>

@@ -9,17 +9,47 @@
     </div>
   {% else %}
 
-    <div class="container text-white secondary_container">
-        <p>Work in progress, come back soon!</p>
+  <div class="container text-white secondary_container">
+        <form class="form" action="/crows5/submit" method="POST">
+            <input type="text" name="secret" placeholder=">Secret" value="{{ request.form.secret }}">
+            <button type="submit" value="Submit">Submit</button>
+        </form>
+        <a href="view-source:http://127.0.0.1:5000/crows5?msg=1">View Source</a>
     </div>
+
+    <?php
+
+        $encodedSecret = "3d3d51";
+
+        function encode($secret) {
+            return bin2hex(strrev(base64_encode($secret)));
+        }
+
+        if(array_key_exists("submit", $_POST)) {
+            if (encode($_POST['secret']) == $encodedSecret) {
+                print "Access granted. Your secret is...";
+            } else {
+                print "Wrong secret!";
+            }
+        }
+    ?>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
+        {% if "Wrong" in messages[0] %}
+            <div class="flash_container">
+                <ul class="flashes alert alert-danger text-center h3" id="flash">
+                    <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                    <p>{{ messages[0] }}</p>
+                </ul>
+            </div>
+        {% else %}
         <div class="flash_container">
             <ul class="flashes alert alert-success text-center h3" id="flash">
                 <i class="fas fa-crow" style="padding-right: 7px;"> </i>
                 <p>{{ messages[0] }}</p>
             </ul>
         </div>
+        {% endif %}
     {% endif %}
     {% endwith %}
 

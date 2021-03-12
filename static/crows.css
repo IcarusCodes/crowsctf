@@ -94,6 +94,8 @@ body .footer .content > div .image {
     margin-top: 5%;
     width: fit-content;
     height: fit-content;
+    width: -moz-fit-content;
+    height: -moz-fit-content;
     margin-left: auto;
     margin-right: auto;
     border-right: 5px solid #f0f3f7;
