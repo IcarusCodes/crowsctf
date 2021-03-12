@@ -41,7 +41,7 @@ def crows(i=""):
         return redirect(url_for('main.robots'))
 
     # Handle Crows4
-    if 'crows4' and request.headers.get('Referer') == "http://crowsctf.cf/crows5":
+    if request.headers.get('Referer') == "https://crowsctf.cf/crows5":
         return render_template(f'crows/crows4success.html', level=f'Crows4')
 
     msg = request.args.get('msg')
