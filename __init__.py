@@ -34,4 +34,11 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
+    def has_access(user, stage):
+        if user in [f'Crows{x}' for x in range(stage, 8)]:
+            return True
+        else:
+            return False
+    app.jinja_env.globals.update(has_access=has_access)
+
     return app

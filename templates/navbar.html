@@ -10,44 +10,91 @@
         </div>
     </a>
 
-    <a href="{{ url_for('auth.login', stage=0) }}" class="navbar-brand">
+    <a href="
+    {% if has_access(current_user.username, 0) %}
+        {{ url_for('main.crows', i=0, level='Crows0') }}
+    {% else %}
+        {{ url_for('auth.login', stage=0) }}
+    {% endif %}" class="navbar-brand">
         <i class="fas fa-crow fa-lg"> </i>
         <strong>Crows0</strong>
     </a>
 
-    <a href="{{ url_for('auth.login', stage=1) }}" class="navbar-brand">
+    <a href="
+    {% if has_access(current_user.username, 1) %}
+        {{ url_for('main.crows', i=1, level='Crows1') }}
+    {% else %}
+        {{ url_for('auth.login', stage=1) }}
+    {% endif %}
+    " class="navbar-brand">
         <div class="grows">
             <i class="fas fa-crow fa-lg"></i>
             <strong>Crows1</strong>
         </div>
     </a>
 
-    <a href="{{ url_for('auth.login', stage=2) }}" class="navbar-brand">
+    <a href="
+    {% if has_access(current_user.username, 2) %}
+        {{ url_for('main.crows', i=2, level='Crows2') }}
+    {% else %}
+        {{ url_for('auth.login', stage=2) }}
+    {% endif %}
+    " class="navbar-brand">
         <i class="fas fa-crow fa-lg"> </i>
         <strong>Crows2</strong>
     </a>
 
-    <a href="{{ url_for('auth.login', stage=3) }}" class="navbar-brand">
+    <a href="
+    {% if has_access(current_user.username, 3) %}
+        {{ url_for('main.crows', i=3, level='Crows3') }}
+    {% else %}
+        {{ url_for('auth.login', stage=3) }}
+    {% endif %}
+    " class="navbar-brand">
         <i class="fas fa-crow fa-lg"> </i>
         <strong>Crows3</strong>
     </a>
 
-    <a href="{{ url_for('auth.login', stage=4) }}" class="navbar-brand">
+    <a href="
+    {% if has_access(current_user.username, 4) %}
+        {{ url_for('main.crows', i=4, level='Crows4') }}
+    {% else %}
+        {{ url_for('auth.login', stage=4) }}
+    {% endif %}
+    " class="navbar-brand">
         <i class="fas fa-crow fa-lg"> </i>
         <strong>Crows4</strong>
     </a>
 
-    <a href="{{ url_for('auth.login', stage=5) }}" class="navbar-brand">
+    <a href="
+    {% if has_access(current_user.username, 5) %}
+        {{ url_for('main.crows', i=5, level='Crows5') }}
+    {% else %}
+        {{ url_for('auth.login', stage=5) }}
+    {% endif %}
+    " class="navbar-brand">
         <i class="fas fa-crow fa-lg"> </i>
         <strong>Crows5</strong>
     </a>
 
-    <a href="{{ url_for('auth.login', stage=6) }}" class="navbar-brand">
+    <a href="
+    {% if has_access(current_user.username, 6) %}
+        {{ url_for('main.crows', i=6, level='Crows6') }}
+    {% else %}
+        {{ url_for('auth.login', stage=6) }}
+    {% endif %}
+    " class="navbar-brand">
         <i class="fas fa-crow fa-lg"> </i>
         <strong>Crows6</strong>
     </a>
 
-    <a href="{{ url_for('auth.login', stage=7) }}" class="navbar-brand">
+    <a href="
+    {% if has_access(current_user.username, 7) %}
+        {{ url_for('main.crows', i=7, level='Crows7') }}
+    {% else %}
+        {{ url_for('auth.login', stage=7) }}
+    {% endif %}
+    " class="navbar-brand">
         <i class="fas fa-crow fa-lg"> </i>
         <strong>Crows7</strong>
     </a>

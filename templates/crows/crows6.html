@@ -1,7 +1,7 @@
 {% extends "crows/crows.html" %}
 {% block title %}Crows6{% endblock %}
 {% block content %}
-  {% if current_user.username != "Crows6" %}
+  {% if not has_access(current_user.username, 6) %}
     <div class="container secondary_container_danger bg-danger text-white text-center">
         <p>I see you are a very naughty crow!</p>
         <p>Challenges are sequential - you must be logged in as Crows1 to solve this level.</p>

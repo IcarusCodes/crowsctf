@@ -1,7 +1,7 @@
 {% extends "crows/crows.html" %}
 {% block title %}Crows4{% endblock %}
 {% block content %}
-  {% if current_user.username != "Crows4" %}
+  {% if not has_access(current_user.username, 4) %}
     <div class="container p-5 my-5 bg-danger text-white text-center">
         <p>You got to the right page, but you must be logged in as <strong>Crows4</strong></p>
     </div>
