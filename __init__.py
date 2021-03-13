@@ -1,5 +1,4 @@
-import time
-from flask import Flask
+from flask import Flask, render_template
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_mobility import Mobility
@@ -25,6 +24,10 @@ def create_app():
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.get(int(user_id))
+
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('notfound.html'), 404
 
     # blueprint for auth routes
     from .auth import auth as auth_blueprint

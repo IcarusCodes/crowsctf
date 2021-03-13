@@ -98,10 +98,11 @@ p h1  {
 .unauth h2 {
   font-family: 'Montserrat', sans-serif;
   color: white;
-  font-size: 24px;
+  font-size: 38px;
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
+  text-shadow: 2px 4px #34A4E8;
 }
 
 .unauth p {
