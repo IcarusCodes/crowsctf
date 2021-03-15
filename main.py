@@ -73,8 +73,11 @@ def crows7submit():
                     needle = needle.replace(_, f"/usr/bin/{_}")
 
             results = os.popen(needle).read().split("\n")
-
+            # debug purposes
+            # results = ["abascus", "tobasco", "marcel", "ioenl", "abascus", "tobasco", "marcel", "ioenl"]
             return render_template('crows/crows7.html', level='Crows7', results=results[:5])
+        else:
+            return render_template('crows/crows7.html', level='Crows7')
 
 
 @main.route('/crows7/viewsource')
