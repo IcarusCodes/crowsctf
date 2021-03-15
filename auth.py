@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+import base64
+
+from flask import Blueprint, render_template, redirect, url_for, request, flash, make_response
 from flask_login import login_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
@@ -46,6 +48,12 @@ def login_post():
         return redirect(url_for(f'auth.login', stage=stage))
 
     login_user(user)
+
+    if stage == "5":
+        resp = make_response(redirect(url_for('main.crows', i=user.username[-1], msg=0)))
+        custom_cookie = base64.b64encode(b'Go to /crows5/cookie-source').decode('utf-8') + "=="
+        resp.set_cookie("isAuthenticated", custom_cookie)
+        return resp
 
     return redirect(url_for(f'main.crows', i=user.username[-1], msg=0))
 

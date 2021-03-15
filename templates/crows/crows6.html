@@ -4,23 +4,52 @@
   {% if not has_access(current_user.username, 6) %}
     <div class="container secondary_container_danger bg-danger text-white text-center">
         <p>I see you are a very naughty crow!</p>
-        <p>Challenges are sequential - you must be logged in as Crows1 to solve this level.</p>
-        <p>Get back to Crows0 and grab the flag.</p>
+        <p>Challenges are sequential - you must be logged in as Crows6 to solve this level.</p>
+        <p>Get back to Crows5 and grab the flag.</p>
     </div>
   {% else %}
 
-    <div class="container text-white secondary_container">
-        <p>Work in progress</p>
+  <div class="container text-white secondary_container">
+        <form class="form" action="/crows6/submit" method="POST">
+            <input class="width50" type="text" name="secret" placeholder=">Secret" value="{{ request.form.secret }}">
+            <button class="width50 btn btn-primary" type="submit" value="Submit"><strong>SUBMIT</strong></button>
+        </form><br/>
+        <a href="{{ url_for('main.viewsource') }}" target="_blank">>View Source<</a>
     </div>
 
+    <?php
+
+        $encodedSecret = "6e3557617956575a756c325a7556555a7a4a585a32566d55";
+
+        function encode($secret) {
+            return bin2hex(strrev(base64_encode($secret)));
+        }
+
+        if(array_key_exists("submit", $_POST)) {
+            if (encode($_POST['secret']) == $encodedSecret) {
+                print "Access granted. Your secret is...";
+            } else {
+                print "Wrong secret!";
+            }
+        }
+    ?>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
+        {% if "Wrong" in messages[0] %}
+            <div class="flash_container">
+                <ul class="flashes alert alert-danger text-center h3" id="flash">
+                    <i class="fas fa-crow" style="padding-right: 7px;"> </i>
+                    <p>{{ messages[0] }}</p>
+                </ul>
+            </div>
+        {% else %}
         <div class="flash_container">
             <ul class="flashes alert alert-success text-center h3" id="flash">
                 <i class="fas fa-crow" style="padding-right: 7px;"> </i>
                 <p>{{ messages[0] }}</p>
             </ul>
         </div>
+        {% endif %}
     {% endif %}
     {% endwith %}
 

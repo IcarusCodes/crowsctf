@@ -144,6 +144,9 @@ body .footer .content > div .image {
   padding-top: 40px;
 }
 
+.width50 {
+  width: 50%;
+}
 
 .onerem {
   font-size: 1rem;

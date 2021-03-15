@@ -1,0 +1,14 @@
+{% extends "crows/crows.html" %}
+{% block title %}Crows6{% endblock %}
+{% block content %}
+  {% if not has_access(current_user.username, 6) %}
+    <div class="container p-5 my-5 bg-danger text-white text-center">
+        <p>You got to the right page, but you must be logged in as <strong>Crows6</strong></p>
+    </div>
+  {% else %}
+      <div class="container text-white secondary_container">
+       <p>Crows7</p>
+       <p><strong>2bd1212573f21d30045661db06d2a0d5</strong></p>
+      </div>
+  {% endif %}
+{% endblock %}

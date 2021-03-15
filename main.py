@@ -1,5 +1,7 @@
+import base64
 import random
 import re
+import os
 from datetime import datetime
 
 from flask import Blueprint, render_template, request, flash, redirect, url_for
@@ -36,21 +38,39 @@ def robots():
 
 @main.route('/crows3/cr0w-s3cr3t')
 def secret():
-    return render_template('crows/crows-secret.html')
+    return render_template('crows/crows-secret.html', level="Crows3")
 
 
-@main.route('/crows5/submit', methods=['POST'])
+@main.route('/crows5/cookie-source')
+def cookie_source():
+    return render_template('crows/crows5_viewsource.html', level="Crows5")
+
+
+@main.route('/crows6/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
         if request.form.get('secret') == "ReverseEngineering":
-            return render_template('crows/crows5success.html')
+            return render_template('crows/crows6success.html', level='Crows6')
         else:
-            return redirect(url_for(f'main.crows', i=5, msg=10))
+            return redirect(url_for(f'main.crows', i=6, msg=10))
 
 
-@main.route('/crows5/viewsource')
+@main.route('/crows6/viewsource')
 def viewsource():
-    return render_template('crows/viewsource.html')
+    return render_template('crows/crows6_viewsource.html', level="Crows6")
+
+
+@main.route('/crows7/submit', methods=['POST'])
+def crows7submit():
+    if request.method == 'POST':
+        if request.form.get('needle') != "":
+            results = os.system(f"grep -i {request.form.get('needle')} /tmp/words.txt")
+            return render_template('crows/crows7.html', level='Crows7', results=results)
+
+
+@main.route('/crows7/viewsource')
+def crows7viewsource():
+    return render_template('crows/crows7_viewsource.html', level="Crows7")
 
 
 @main.route('/crows<i>')
@@ -63,6 +83,11 @@ def crows(i=""):
     # Handle Crows4
     if request.headers.get('Referer') == "https://crowsctf.cf/crows5":
         return render_template(f'crows/crows4success.html', level=f'Crows4')
+
+    # # Handle Crows5
+    if 'crows5' in request.url and 'isAuthenticated' in request.cookies:
+        if base64.b64decode(request.cookies['isAuthenticated']).decode('utf-8') == "True":
+            return render_template('crows/crows5success.html', level='Crows5')
 
     msg = request.args.get('msg')
     if msg is None:
