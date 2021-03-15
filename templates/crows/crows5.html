@@ -4,8 +4,8 @@
   {% if not has_access(current_user.username, 5) %}
     <div class="container secondary_container_danger bg-danger text-white text-center">
         <p>I see you are a very naughty crow!</p>
-        <p>Challenges are sequential - you must be logged in as Crows1 to solve this level.</p>
-        <p>Get back to Crows0 and grab the flag.</p>
+        <p>Challenges are sequential - you must be logged in as Crows5 to solve this level.</p>
+        <p>Get back to Crows4 and grab the flag.</p>
     </div>
   {% else %}
 
@@ -14,12 +14,12 @@
             <input type="text" name="secret" placeholder=">Secret" value="{{ request.form.secret }}">
             <button type="submit" value="Submit">Submit</button>
         </form>
-        <a href="view-source:http://127.0.0.1:5000/crows5?msg=1">View Source</a>
+        <a href="{{ url_for('main.viewsource') }}" target="_blank">View Source</a>
     </div>
 
     <?php
 
-        $encodedSecret = "3d3d51";
+        $encodedSecret = "6e3557617956575a756c325a7556555a7a4a585a32566d55";
 
         function encode($secret) {
             return bin2hex(strrev(base64_encode($secret)));

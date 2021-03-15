@@ -20,8 +20,11 @@ def index():
 
 @main.route('/dashboard')
 def dashboard():
-    if current_user.username == "crowadmin":
-        return render_template('dashboard.html')
+    if hasattr(current_user, 'username'):
+        if current_user.username == "crowadmin":
+            return render_template('dashboard.html')
+        else:
+            return render_template('unauthorized.html')
     else:
         return render_template('unauthorized.html')
 
@@ -39,10 +42,15 @@ def secret():
 @main.route('/crows5/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
-        if request.form.get('secret') == "asdad":
+        if request.form.get('secret') == "ReverseEngineering":
             return render_template('crows/crows5success.html')
         else:
             return redirect(url_for(f'main.crows', i=5, msg=10))
+
+
+@main.route('/crows5/viewsource')
+def viewsource():
+    return render_template('crows/viewsource.html')
 
 
 @main.route('/crows<i>')

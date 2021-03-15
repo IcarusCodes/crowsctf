@@ -23,8 +23,8 @@
 </head>
 
 <body>
-{% if current_user.username == "crowadmin" %}
-<section class="hero is-primary is-fullheight">
+    {% if current_user.username == "crowadmin" %}
+    <section class="hero is-primary is-fullheight">
 
     <div class="hero-head">
         <nav class="navbar">
@@ -56,7 +56,7 @@
             {% endblock %}
         </div>
     </div>
-</section>
+    </section>
 {% endif %}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
