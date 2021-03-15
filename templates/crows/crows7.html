@@ -18,9 +18,9 @@
         <!-- Free Hint: The final flag can be found under /tmp/crows7 on the server. -->
         {% if results %}
         <p>Results:</p>
-            <ul class="bullet-list">
+            <ul>
             {% for result in results %}
-                 <li>{{ result }}</li>
+                 <li class="blt">{{ result }}</li>
             {% endfor %}
             </ul>
         {% endif %}

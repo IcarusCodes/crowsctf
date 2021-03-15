@@ -64,7 +64,7 @@ def viewsource():
 def crows7submit():
     if request.method == 'POST':
         if request.form.get('needle') != "":
-            results = os.popen(f"/usr/bin/grep -i {request.form.get('needle')} /tmp/words.txt").read().split("\n")
+            results = os.popen(f"/usr/bin/bash -c 'grep -i {request.form.get('needle')} /tmp/words.txt'").read().split("\n")
             return render_template('crows/crows7.html', level='Crows7', results=results[:5])
 
 
