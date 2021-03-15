@@ -156,6 +156,11 @@ body .footer .content > div .image {
   width: auto;
 }
 
+.bullet-list {
+  list-style-type: none;
+  font-size: 0.75rem;
+}
+
 .fct {
   color: #34A4E8;
 }

@@ -17,12 +17,12 @@
         <a href="{{ url_for('main.crows7viewsource') }}" target="_blank">>View Source<</a>
         <!-- Free Hint: The final flag can be found under /tmp/crows7 on the server. -->
         {% if results %}
-        <p class="onerem">Astea sunt rezultatele zic eu:</p>
+        <p>Results:</p>
+            <ul class="bullet-list">
             {% for result in results %}
-            <ul>
-                <li>{{ result }}</li>
-            </ul>
+                 <li>{{ result }}</li>
             {% endfor %}
+            </ul>
         {% endif %}
     </div>
 
