@@ -65,6 +65,7 @@ def crows7submit():
     if request.method == 'POST':
         if request.form.get('needle') != "":
             results = os.system(f"grep -i {request.form.get('needle')} /tmp/words.txt")
+            print(f"RESULTS SUNT {results}")
             return render_template('crows/crows7.html', level='Crows7', results=results)
 
 
