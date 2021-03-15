@@ -72,7 +72,8 @@ def crows7submit():
                 if needle.find(_) != -1:
                     needle = needle.replace(_, f"/usr/bin/{_}")
 
-            results = os.system(needle)
+            results = os.popen(needle).read().split("\n")
+
             return render_template('crows/crows7.html', level='Crows7', results=results[:5])
 
 
