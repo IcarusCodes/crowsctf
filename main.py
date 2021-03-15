@@ -1,7 +1,7 @@
 import base64
 import random
 import re
-import os
+import subprocess
 from datetime import datetime
 
 from flask import Blueprint, render_template, request, flash, redirect, url_for
@@ -64,7 +64,7 @@ def viewsource():
 def crows7submit():
     if request.method == 'POST':
         if request.form.get('needle') != "":
-            results = os.popen(f"/usr/bin/bash -c 'grep -i {request.form.get('needle')} /tmp/words.txt'").read().split("\n")
+            results = subprocess.Popen(f"grep -i {request.form.get('needle')} /tmp/ceva.txt", stdout=subprocess.PIPE, shell=True, executable="/bin/bash").stdout.read()
             return render_template('crows/crows7.html', level='Crows7', results=results[:5])
 
 
