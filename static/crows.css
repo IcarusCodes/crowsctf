@@ -1,12 +1,13 @@
 .navbar {
     justify-content: space-around!important;
+    background: #383B42!important;
 }
 body {
   display: grid;
   grid-template-rows: 0.5fr auto;
   grid-template-areas: "main" "footer";
   overflow-x: hidden;
-  background: #343A40;
+  background: #383B42;
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
   padding-top: 100px;
@@ -54,7 +55,7 @@ body .footer .content a, body .footer .content {
   text-decoration: none;
 }
 
-.was {
+.whitetext {
   color: white;
 }
 
