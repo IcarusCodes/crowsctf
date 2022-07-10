@@ -98,5 +98,16 @@
         <i class="fas fa-crow fa-lg"> </i>
         <strong>Crows7</strong>
     </a>
+
+    <a href="
+    {% if has_access(current_user.username, 8) %}
+        {{ url_for('main.crows', i=8, level='Crows8') }}
+    {% else %}
+        {{ url_for('auth.login', stage=8) }}
+    {% endif %}
+    " class="navbar-brand">
+        <i class="fas fa-crow fa-lg"> </i>
+        <strong>Crows8</strong>
+    </a>
 </nav>
 <!-- Navbar End -->

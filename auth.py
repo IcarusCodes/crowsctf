@@ -7,8 +7,6 @@ from datetime import datetime
 
 auth = Blueprint('auth', __name__)
 
-accepted_users = ['Crows0', 'Crows1', 'Crows2', 'Crows3', 'Crows4', 'Crows5', 'Crows6']
-
 
 @auth.context_processor
 def inject_now():
@@ -20,7 +18,7 @@ def login():
     if request.method == 'GET':
         stage = request.args.get('stage')
         if stage is not None:
-            if int(stage) not in range(0, 8):
+            if int(stage) not in range(0, 9):
                 stage = 0
         else:
             stage = 0
