@@ -38,7 +38,7 @@ def create_app():
     app.register_blueprint(main_blueprint)
 
     def has_access(user, stage):
-        if user in [f'Crows{x}' for x in range(stage, 8)]:
+        if user in [f'Crows{x}' for x in range(stage, 9)]:
             return True
         else:
             return False
