@@ -67,17 +67,19 @@ def crows7submit():
 
     if request.method == 'POST':
         if request.form.get('needle') != "":
+
             needle = request.form.get('needle')
             # Remove forbidden characters
             for i in blacklist:
                 if needle.find(i) != -1:
                     needle = needle.replace(i, '')
 
-            command = f"grep -i {needle} /tmp/words.txt"
+            command = f"/usr/bin/grep -i {needle} /tmp/words.txt"
+
             for j in whitelist:
                 if command.find(j) != -1:
                     command = command.replace(j, f"/usr/bin/{j}")
-
+            
             results = os.popen(command).read().split("\n")
             return render_template('crows/crows7.html', level='Crows7', results=results[:5])
         else:
