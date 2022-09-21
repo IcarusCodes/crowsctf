@@ -13,14 +13,14 @@
             &lt;?php
         </p>
         <p>
-            <span class="var">$needle</span> = <code>""</code>;<br/><br/>
-
             if (<span class="fct">array_key_exists</span>(<code>"needle"</code>, $_REQUEST)) {<br/>
             &emsp;&emsp;<span class="var">$needle</span> = $_REQUEST[<code>"needle"</code>];<br/>
             }<br/><br/>
 
             if (<span class="var">$needle</span> != <code>""</code>) {<br/>
-            &emsp;&emsp;<span class="fct">passthru</span>(<code>"grep -i <span class="var">$needle</span> words.txt"</code>);<br/>
+            &emsp;&emsp;<span class="var">$substitutions</span> = [<code>';' => '', '&&' => '', '& ' => '', '|' => '', '||' => ''</code>];<br/>
+            &emsp;&emsp;<span class="var">$needle</span> = <span class="fct">str_replace</span>(<span class="fct">array_keys</span>(<span class="var">$substitutions</span>), <span class="var">$substitutions</span>, <span class="var">$needle</span>);<br/><br/>
+            &emsp;&emsp;<span class="fct">shell_exec</span>(<code>"grep -i <span class="var">$needle</span> words.txt"</code>);<br/>
             }<br/><br/>
 
             ?&gt;
