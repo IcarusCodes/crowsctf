@@ -62,19 +62,23 @@ def viewsource():
 
 @main.route('/crows7/submit', methods=['POST'])
 def crows7submit():
-    whitelist = ["grep", "ls", "less", "head", "tail", "more", "pwd", "cat"]
+    whitelist = ["ls", "tail", "less", "pwd", "cat"]
+    blacklist = [';', '&&', '& ', '|', '||']
 
     if request.method == 'POST':
         if request.form.get('needle') != "":
-            needle = f"grep -i {request.form.get('needle')} /tmp/words.txt"
+            needle = request.form.get('needle')
+            # Remove forbidden characters
+            for i in blacklist:
+                if needle.find(i) != -1:
+                    needle = needle.replace(i, '')
 
-            for _ in whitelist:
-                if needle.find(_) != -1:
-                    needle = needle.replace(_, f"/usr/bin/{_}")
+            command = f"grep -i {needle} /tmp/words.txt"
+            for j in whitelist:
+                if command.find(j) != -1:
+                    command = command.replace(j, f"/usr/bin/{j}")
 
-            results = os.popen(needle).read().split("\n")
-            # debug purposes
-            # results = ["abascus", "tobasco", "marcel", "ioenl", "abascus", "tobasco", "marcel", "ioenl"]
+            results = os.popen(command).read().split("\n")
             return render_template('crows/crows7.html', level='Crows7', results=results[:5])
         else:
             return render_template('crows/crows7.html', level='Crows7')
