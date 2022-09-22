@@ -81,7 +81,7 @@ def crows7submit():
                     command = command.replace(j, f"/usr/bin/{j}")
             
             results = os.popen(command).read().split("\n")
-            return render_template('crows/crows7.html', level='Crows7', results=results[:5])
+            return render_template('crows/crows7.html', level='Crows7', results=results)
         else:
             return render_template('crows/crows7.html', level='Crows7')
 
